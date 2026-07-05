@@ -20,7 +20,7 @@ status: Production Ready
 ## ⭐ START HERE - HOW TO USE THIS AGENT
 
 ### For Immediate Execution:
-**Use PARTITION_CREATION_PROMPT.md** - This file contains the exact proven pattern that successfully partitioned PATIENT (June 26) and RX_TX (June 28).
+**Use DOCUMENTATION/PARTITION_CREATION_PROMPT.md** - This file contains the exact proven pattern that successfully partitioned PATIENT (June 26) and RX_TX (June 28).
 
 **Why?** It contains:
 - 9 step-by-step instructions (Steps 0-9)
@@ -48,9 +48,9 @@ status: Production Ready
 
 ```
 1. Select next table from Category A1 (PRESCRIBER, ADDRESS, MRN, etc.)
-2. Open PARTITION_CREATION_PROMPT.md
+2. Open DOCUMENTATION/PARTITION_CREATION_PROMPT.md
 3. Follow Steps 0-9 exactly as written
-4. When done, mark table complete and update PARTITION_ROLLOUT_SUMMARY.md
+4. When done, mark table complete and update DOCUMENTATION/PARTITION_ROLLOUT_SUMMARY.md
 5. Move to next table
 ```
 
@@ -103,7 +103,7 @@ Execute partitioning of EPS database tables using standardized CHAIN_ID partitio
 Agent MUST consult these documents BEFORE executing any task:
 
 ### **⭐ PRIMARY EXECUTION REFERENCE**
-- **PARTITION_CREATION_PROMPT.md** - PROVEN SUCCESS PATTERN (validated June 28, 2026)
+- **DOCUMENTATION/PARTITION_CREATION_PROMPT.md** - PROVEN SUCCESS PATTERN (validated June 28, 2026)
   - **Use for:** ALL CHAIN_ID-based table partitioning tasks
   - **Status:** Production-ready, validated on PATIENT (June 26) and RX_TX (June 28)
   - **Content:** 9 detailed steps with exact SQL patterns, column order rules, FK recreation rules
@@ -115,16 +115,16 @@ Agent MUST consult these documents BEFORE executing any task:
     * **CRITICAL REMINDER:** CHAIN_ID must be FIRST in new PK
 
 ### **Navigation & Planning**
-- **PARTITION_MASTER_INDEX.md** - Central hub for finding information
+- **DOCUMENTATION/PARTITION_MASTER_INDEX.md** - Central hub for finding information
   - Use when: Need to locate any information
   - Reference: Quick navigation, where-to-find-information table
 
-- **PARTITION_STRATEGY_BY_TABLE.md** - All 128 tables categorized
+- **DOCUMENTATION/PARTITION_STRATEGY_BY_TABLE.md** - All 128 tables categorized
   - Use when: Selecting next table or understanding classification
   - Reference: Category A1-A3, B1-B3, C with priorities
 
 ### **Execution Playbook (Detailed Reference)**
-- **PARTITION_IMPLEMENTATION_RULEBOOK.md** - Detailed playbook for reference
+- **DOCUMENTATION/PARTITION_IMPLEMENTATION_RULEBOOK.md** - Detailed playbook for reference
   - Use when: Need deeper understanding of partitioning concepts
   - Reference: All 5 phases, rules, troubleshooting
   - Sections:
@@ -134,7 +134,7 @@ Agent MUST consult these documents BEFORE executing any task:
     * Common Issues & Resolutions
 
 ### **Visual Reference**
-- **PARTITION_PROCESS_FLOW.md** - Visual flowchart
+- **DOCUMENTATION/PARTITION_PROCESS_FLOW.md** - Visual flowchart
   - Use when: Understanding process flow or decision trees
   - Reference: ASCII flowchart, error recovery tree, quick commands
 
@@ -144,12 +144,12 @@ Agent MUST consult these documents BEFORE executing any task:
   - Reference: CHAIN_ID values, partition ranges, business logic
 
 ### **Queries & Verification**
-- **VERIFY_PARTITIONS_QUERIES.sql** - 10 verification queries
+- **SQL_VERIFICATION/VERIFY_PARTITIONS_QUERIES.sql** - 10 verification queries
   - Use when: Need to verify partitioning results
   - Reference: Copy-paste queries 1-6 (critical), 7-10 (optional)
 
 ### **Reference Examples**
-- **PATIENT_PARTITIONING_EXECUTION_REPORT.md** - Real execution
+- **EXECUTION/PATIENT_PARTITIONING_EXECUTION_REPORT.md** - Real execution
   - Use when: Need to understand what completed execution looks like
   - Reference: Full report structure, timing, all phases
 
@@ -168,7 +168,7 @@ Agent MUST consult these documents BEFORE executing any task:
 ```
 Agent Setup:
 1. Load all mandatory references into memory (context)
-2. Parse PARTITION_STRATEGY_BY_TABLE.md for table classifications
+2. Parse DOCUMENTATION/PARTITION_STRATEGY_BY_TABLE.md for table classifications
 3. Identify next unprocessed table (start with Category A1)
 4. Review table strategy (CHAIN_ID or AUDIT_TIMESTAMP)
 5. Verify partition infrastructure exists (pf_ChainID_EPS, ps_ChainID_EPS)
@@ -185,7 +185,7 @@ Agent Setup:
 
 ```
 Process:
-1. Read: PARTITION_STRATEGY_BY_TABLE.md
+1. Read: DOCUMENTATION/PARTITION_STRATEGY_BY_TABLE.md
 2. Find: Next incomplete table from Category A1 (highest priority)
    Priority Order:
    A1: PATIENT (✅ DONE), ADDRESS, RX_TX, PRESCRIBER, MRN, CARD, PAYMENT, LINE_ITEM, ALLERGY, DISEASE

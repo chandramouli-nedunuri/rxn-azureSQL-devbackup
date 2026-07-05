@@ -1,0 +1,1333 @@
+[SUCCESS] Connected to Azure SQL successfully
+  Server: sql-epr-qa-eastus2.database.windows.net
+  Database: sqldb-epr-qa
+
+Query Results:
+schema_name: ARS
+table_name: ARS_PROPERTIES
+index_name: ARS_PROP_UQ_KEY
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: KEY
+column_position: 1
+
+schema_name: ARS
+table_name: ARS_PROPERTIES
+index_name: ARS_PROPERTIES_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: ARS_PROPERTIES
+index_name: ROWID$INDEX
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: ROWID
+column_position: 1
+
+schema_name: ARS
+table_name: BILL_VEND_PROD_STORE_AUDIT
+index_name: BILL_VEND_PROD_STORE_AUDIT_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: BILLABLE_PRODUCT
+index_name: BILLABLE_PRODUCT_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: BILLABLE_PRODUCT
+index_name: BILLABLE_PRODUCT_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: NAME
+column_position: 1
+
+schema_name: ARS
+table_name: BILLABLE_VEND_PROD_STORE
+index_name: BILLABLE_VEND_PROD_STORE_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: BILLABLE_VENDOR_ID
+column_position: 1
+
+schema_name: ARS
+table_name: BILLABLE_VEND_PROD_STORE
+index_name: BILLABLE_VEND_PROD_STORE_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: BILLABLE_PRODUCT_ID
+column_position: 2
+
+schema_name: ARS
+table_name: BILLABLE_VEND_PROD_STORE
+index_name: BILLABLE_VEND_PROD_STORE_IX2
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: STORE_ID
+column_position: 1
+
+schema_name: ARS
+table_name: BILLABLE_VEND_PROD_STORE
+index_name: BILLABLE_VEND_PROD_STORE_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: BILLABLE_VEND_PROD_STORE
+index_name: BILLABLE_VEND_PROD_STORE_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: BILLABLE_VENDOR_ID
+column_position: 1
+
+schema_name: ARS
+table_name: BILLABLE_VEND_PROD_STORE
+index_name: BILLABLE_VEND_PROD_STORE_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: BILLABLE_PRODUCT_ID
+column_position: 2
+
+schema_name: ARS
+table_name: BILLABLE_VEND_PROD_STORE
+index_name: BILLABLE_VEND_PROD_STORE_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: STORE_ID
+column_position: 3
+
+schema_name: ARS
+table_name: BILLABLE_VENDOR
+index_name: BILLABLE_VENDOR_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: BILLABLE_VENDOR
+index_name: BILLABLE_VENDOR_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: VENDOR_SHORT_NAME
+column_position: 1
+
+schema_name: ARS
+table_name: BILLABLE_VENDOR
+index_name: BILLABLE_VENDOR_UK2
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: VENDOR_NPI
+column_position: 1
+
+schema_name: ARS
+table_name: BILLABLE_VENDOR
+index_name: BILLABLE_VENDOR_UK3
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: VENDOR_NCPDP
+column_position: 1
+
+schema_name: ARS
+table_name: BILLABLE_VENDOR
+index_name: BILLABLE_VENDOR_UK4
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: VENDOR_NHIN
+column_position: 1
+
+schema_name: ARS
+table_name: BILLABLE_VENDOR_PRODUCT
+index_name: BILLABLE_VENDOR_PRODUCT_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: BILLABLE_VENDOR_ID
+column_position: 1
+
+schema_name: ARS
+table_name: BILLABLE_VENDOR_PRODUCT
+index_name: BILLABLE_VENDOR_PRODUCT_IX2
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: BILLABLE_PRODUCT_ID
+column_position: 1
+
+schema_name: ARS
+table_name: BILLABLE_VENDOR_PRODUCT
+index_name: BILLABLE_VENDOR_PRODUCT_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: BILLABLE_VENDOR_PRODUCT
+index_name: BILLABLE_VENDOR_PRODUCT_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: BILLABLE_VENDOR_ID
+column_position: 1
+
+schema_name: ARS
+table_name: BILLABLE_VENDOR_PRODUCT
+index_name: BILLABLE_VENDOR_PRODUCT_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: BILLABLE_PRODUCT_ID
+column_position: 2
+
+schema_name: ARS
+table_name: CHAIN_PRODUCT
+index_name: CHAIN_PRODUCT_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: CHAINS_ID
+column_position: 1
+
+schema_name: ARS
+table_name: CHAIN_PRODUCT
+index_name: CHAIN_PRODUCT_IX2
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: PRODUCTS_ID
+column_position: 1
+
+schema_name: ARS
+table_name: CHAIN_PRODUCT
+index_name: CHAIN_PRODUCT_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: CHAIN_PRODUCT
+index_name: CHAIN_PRODUCT_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: CHAINS_ID
+column_position: 1
+
+schema_name: ARS
+table_name: CHAIN_PRODUCT
+index_name: CHAIN_PRODUCT_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: PRODUCTS_ID
+column_position: 2
+
+schema_name: ARS
+table_name: CHAIN_PRODUCT
+index_name: ROWID$INDEX
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: ROWID
+column_position: 1
+
+schema_name: ARS
+table_name: CHAIN_PRODUCT_AUDIT
+index_name: CHAIN_PRODUCT_AUDIT_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: CHAINS_ID
+column_position: 1
+
+schema_name: ARS
+table_name: CHAIN_PRODUCT_AUDIT
+index_name: CHAIN_PRODUCT_AUDIT_IX2
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: PRODUCTS_ID
+column_position: 1
+
+schema_name: ARS
+table_name: CHAIN_PRODUCT_AUDIT
+index_name: CHAIN_PRODUCT_AUDIT_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: CHAIN_PRODUCT_AUDIT
+index_name: ROWID$INDEX
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: ROWID
+column_position: 1
+
+schema_name: ARS
+table_name: CHAINS
+index_name: CHAINS_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: PARENT_ID
+column_position: 1
+
+schema_name: ARS
+table_name: CHAINS
+index_name: CHAINS_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: CHAINS
+index_name: CHAINS_UQ_HQ_ID
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: HQ_ID
+column_position: 1
+
+schema_name: ARS
+table_name: CHAINS
+index_name: CHAINS_UQ_NHINID
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: NHINID
+column_position: 1
+
+schema_name: ARS
+table_name: COMM_RESTRICTIONS
+index_name: COMM_RESTRICTIONS_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: VENDOR_ID
+column_position: 1
+
+schema_name: ARS
+table_name: COMM_RESTRICTIONS
+index_name: COMM_RESTRICTIONS_IX2
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: PRODUCT_ID
+column_position: 1
+
+schema_name: ARS
+table_name: COMM_RESTRICTIONS
+index_name: COMM_RESTRICTIONS_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: CONTACT_INFO
+index_name: CONTACT_INFO_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: DIVISIONS
+index_name: DIVISIONS_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: CHAIN_ID
+column_position: 1
+
+schema_name: ARS
+table_name: DIVISIONS
+index_name: DIVISIONS_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: DIVISIONS
+index_name: DIVISIONS_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: CHAIN_ID
+column_position: 1
+
+schema_name: ARS
+table_name: DIVISIONS
+index_name: DIVISIONS_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: NAME
+column_position: 2
+
+schema_name: ARS
+table_name: INTERFACE_VERSION_MAP
+index_name: INTERFACE_VERSION_MAP_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: STORE_ID
+column_position: 1
+
+schema_name: ARS
+table_name: INTERFACE_VERSION_MAP
+index_name: INTERFACE_VERSION_MAP_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: INTERFACE_VERSION_MAP
+index_name: INTERFACE_VERSION_MAP_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: STORE_ID
+column_position: 1
+
+schema_name: ARS
+table_name: INTERFACE_VERSION_MAP
+index_name: INTERFACE_VERSION_MAP_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: SERVICE_NAME
+column_position: 2
+
+schema_name: ARS
+table_name: INTERFACES
+index_name: INTERFACES_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: STORE_ID
+column_position: 1
+
+schema_name: ARS
+table_name: INTERFACES
+index_name: INTERFACES_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: INTERFACES
+index_name: INTERFACES_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: NAME
+column_position: 1
+
+schema_name: ARS
+table_name: INTERFACES
+index_name: INTERFACES_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: STORE_ID
+column_position: 2
+
+schema_name: ARS
+table_name: PDX_SCHEMA_CONFIG
+index_name: PDX_SCHEMA_CONFIG_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: KEY
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_CONFIG
+index_name: ROWID$INDEX
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: ROWID
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_FILE_HASH
+index_name: PDX_SCHEMA_FILE_HASH_IX_PK
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: FILE_NAME
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_FILE_HASH
+index_name: PDX_SCHEMA_FILE_HASH_IX_PK
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: FILE_SOURCE
+column_position: 2
+
+schema_name: ARS
+table_name: PDX_SCHEMA_FILE_HASH
+index_name: PDX_SCHEMA_FILE_HASH_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: FILE_NAME
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_FILE_HASH
+index_name: PDX_SCHEMA_FILE_HASH_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: FILE_SOURCE
+column_position: 2
+
+schema_name: ARS
+table_name: PDX_SCHEMA_FILE_TASKVER
+index_name: PDX_SCHEMA_FILE_TASKVER_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: FILE_NAME
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_FILE_TASKVER
+index_name: PDX_SCHEMA_FILE_TASKVER_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: TASK_VERSION
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_MAPPING
+index_name: PDX_SCHEMA_MAPPING_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: SEARCH
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_MAPPING
+index_name: ROWID$INDEX
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: ROWID
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_PRIV_DEFAULT
+index_name: PDX_SCHEMA_PRIV_DEFAULT_IX_PK
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: GRANTEE
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_PRIV_DEFAULT
+index_name: PDX_SCHEMA_PRIV_DEFAULT_IX_PK
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: OBJECT_TYPE
+column_position: 2
+
+schema_name: ARS
+table_name: PDX_SCHEMA_PRIV_DEFAULT
+index_name: PDX_SCHEMA_PRIV_DEFAULT_IX_PK
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: PRIVILEGE
+column_position: 3
+
+schema_name: ARS
+table_name: PDX_SCHEMA_PRIV_DEFAULT
+index_name: PDX_SCHEMA_PRIV_DEFAULT_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: GRANTEE
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_PRIV_DEFAULT
+index_name: PDX_SCHEMA_PRIV_DEFAULT_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: OBJECT_TYPE
+column_position: 2
+
+schema_name: ARS
+table_name: PDX_SCHEMA_PRIV_DEFAULT
+index_name: PDX_SCHEMA_PRIV_DEFAULT_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: PRIVILEGE
+column_position: 3
+
+schema_name: ARS
+table_name: PDX_SCHEMA_PRIV_EXCEPTION
+index_name: PDX_SCHEMA_PRIV_EXCEPTION_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: GRANTEE
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_PRIV_EXCEPTION
+index_name: PDX_SCHEMA_PRIV_EXCEPTION_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: OBJECT_TYPE
+column_position: 2
+
+schema_name: ARS
+table_name: PDX_SCHEMA_PRIV_EXCEPTION
+index_name: PDX_SCHEMA_PRIV_EXCEPTION_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: OBJECT_NAME
+column_position: 3
+
+schema_name: ARS
+table_name: PDX_SCHEMA_PRIV_EXCEPTION
+index_name: PDX_SCHEMA_PRIV_EXCEPTION_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: PRIVILEGE
+column_position: 4
+
+schema_name: ARS
+table_name: PDX_SCHEMA_PROCESS_HISTORY
+index_name: PDX_SCHEMA_PROCESS_HISTORY_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: PDX_SCHEMA_UPD_PKGCALL_HIST_ID
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_PROCESS_HISTORY
+index_name: PDX_SCHEMA_PROCESS_HISTORY_IX2
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: PDX_SCHEMA_VERSION_HISTORY_ID
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_PROCESS_HISTORY
+index_name: PDX_SCHEMA_PROCESS_HISTORY_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_PROCESS_HISTORY
+index_name: PDX_SCHEMA_PROCESS_HISTORY_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: PDX_SCHEMA_UPD_PKGCALL_HIST_ID
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_PROCESS_HISTORY
+index_name: PDX_SCHEMA_PROCESS_HISTORY_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: PDX_SCHEMA_VERSION_HISTORY_ID
+column_position: 2
+
+schema_name: ARS
+table_name: PDX_SCHEMA_PROCESS_HISTORY
+index_name: PDX_SCHEMA_PROCESS_HISTORY_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: PROCESS
+column_position: 3
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASK_ERROR_LOG
+index_name: PDX_SCHEMA_TASK_ERROR_LOG_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASK_HISTORY
+index_name: PDX_SCHEMA_TASK_HISTORY_IX2
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: PDX_SCHEMA_UPD_PKGCALL_HIST_ID
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASK_HISTORY
+index_name: PDX_SCHEMA_TASK_HISTORY_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASKVER_META
+index_name: PDX_SCHEMA_TASKVER_META_IX_PK
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: TASK_VERSION
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASKVER_META
+index_name: PDX_SCHEMA_TASKVER_META_IX_PK
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: TASK_SOURCE
+column_position: 2
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASKVER_META
+index_name: PDX_SCHEMA_TASKVER_META_IX_PK
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: META_TAG
+column_position: 3
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASKVER_META
+index_name: PDX_SCHEMA_TASKVER_META_IX_PK
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: TASK_VERSION_VALUE
+column_position: 4
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASKVER_META
+index_name: PDX_SCHEMA_TASKVER_META_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: META_TAG
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASKVER_META
+index_name: PDX_SCHEMA_TASKVER_META_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: TASK_SOURCE
+column_position: 2
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASKVER_META
+index_name: PDX_SCHEMA_TASKVER_META_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: TASK_VERSION
+column_position: 3
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASKVER_META
+index_name: PDX_SCHEMA_TASKVER_META_IX2
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: META_TAG
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASKVER_META
+index_name: PDX_SCHEMA_TASKVER_META_IX2
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: TASK_SOURCE
+column_position: 2
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASKVER_META
+index_name: PDX_SCHEMA_TASKVER_META_IX2
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: TASK_VERSION_VALUE
+column_position: 3
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASKVER_META
+index_name: PDX_SCHEMA_TASKVER_META_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: TASK_VERSION
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASKVER_META
+index_name: PDX_SCHEMA_TASKVER_META_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: TASK_SOURCE
+column_position: 2
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASKVER_META
+index_name: PDX_SCHEMA_TASKVER_META_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: META_TAG
+column_position: 3
+
+schema_name: ARS
+table_name: PDX_SCHEMA_TASKVER_META
+index_name: PDX_SCHEMA_TASKVER_META_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: TASK_VERSION_VALUE
+column_position: 4
+
+schema_name: ARS
+table_name: PDX_SCHEMA_UPD_HELPER_DEBUG_D
+index_name: PDX_SCHEMA_UPD_HLPR_DBG_D_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: PDX_SCHEMA_UPD_HLPR_DBG_H_ID
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_UPD_HELPER_DEBUG_D
+index_name: PDX_SCHEMA_UPD_HLPR_DBG_D_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_UPD_HELPER_DEBUG_H
+index_name: PDX_SCHEMA_UPD_HLPR_DBG_H_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: DEBUG_TIMESTAMP
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_UPD_HELPER_DEBUG_H
+index_name: PDX_SCHEMA_UPD_HLPR_DBG_H_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_UPD_PKGCALL_ERR_LOG
+index_name: PDX_SCHEMA_UPD_PKGCALL_ELOG_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_UPD_PKGCALL_HIST
+index_name: PDX_SCHEMA_UPD_PKGCALL_HIST_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_UPDATER_MANIFEST
+index_name: PDX_SCHEMA_UPDATER_MANIFEST_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: VERSION
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_UPDATER_MANIFEST
+index_name: PDX_SCHEMA_UPDATER_MANIFST_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: FILE_NAME
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_UPDATER_MANIFEST
+index_name: PDX_SCHEMA_UPDATER_MANIFST_UK2
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: APPLY_ORDER
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_UPDATER_SQL
+index_name: PDX_SCHEMA_UPDATER_SQL_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: FILE_NAME
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_VERSION_ERROR_LOG
+index_name: PDX_SCHEMA_VERSION_ERR_LOG_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_VERSION_HISTORY
+index_name: PDX_SCHEMA_VERSION_HISTORY_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: PDX_SCHEMA_UPD_PKGCALL_HIST_ID
+column_position: 1
+
+schema_name: ARS
+table_name: PDX_SCHEMA_VERSION_HISTORY
+index_name: PDX_SCHEMA_VERSION_HISTORY_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: PRODUCTS
+index_name: PRODUCTS_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: PRODUCTS
+index_name: PRODUCTS_UQ_NAME
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: NAME
+column_position: 1
+
+schema_name: ARS
+table_name: PRODUCTS
+index_name: ROWID$INDEX
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: ROWID
+column_position: 1
+
+schema_name: ARS
+table_name: PUSH_UPDATES
+index_name: PUSH_UPDATES_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: RXCOM_CA_CERT
+index_name: RXCOM_CA_CERT_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: RXCOM_CERTIFICATES
+index_name: RXCOM_CERTIFICATES_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: STORE_ID
+column_position: 1
+
+schema_name: ARS
+table_name: RXCOM_CERTIFICATES
+index_name: RXCOM_CERTIFICATES_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: RXCOM_CERTIFICATES
+index_name: RXCOM_CERTIFICATES_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: SHA1_THUMBPRINT
+column_position: 1
+
+schema_name: ARS
+table_name: SCHEMA_UPDATER_MANIFEST
+index_name: SCHEMA_UPDATER_MANIFEST_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: FILE_NAME
+column_position: 1
+
+schema_name: ARS
+table_name: SCHEMA_UPDATER_MANIFEST
+index_name: SCHEMA_UPDATER_MANIFEST_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: VERSION
+column_position: 1
+
+schema_name: ARS
+table_name: SCHEMA_UPDATER_MANIFEST
+index_name: SCHEMA_UPDATER_MANIFST_UK2
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: APPLY_ORDER
+column_position: 1
+
+schema_name: ARS
+table_name: SCHEMA_UPDATER_SQL
+index_name: SCHEMA_UPDATER_SQL_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: FILE_NAME
+column_position: 1
+
+schema_name: ARS
+table_name: STORE_HOURS
+index_name: STORE_HOURS_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: STORE_ID
+column_position: 1
+
+schema_name: ARS
+table_name: STORE_HOURS
+index_name: STORE_HOURS_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: STORE_PRODUCT_VENDOR
+index_name: STORE_PRODUCT_VENDOR_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: STORE_ID
+column_position: 1
+
+schema_name: ARS
+table_name: STORE_PRODUCT_VENDOR
+index_name: STORE_PRODUCT_VENDOR_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: PRODUCT_ID
+column_position: 2
+
+schema_name: ARS
+table_name: STORE_PRODUCT_VENDOR
+index_name: STORE_PRODUCT_VENDOR_IX2
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: VENDOR_ID
+column_position: 1
+
+schema_name: ARS
+table_name: STORE_PRODUCT_VENDOR
+index_name: STORE_PRODUCT_VENDOR_IX2
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: PRODUCT_ID
+column_position: 2
+
+schema_name: ARS
+table_name: STORE_PRODUCT_VENDOR
+index_name: STORE_PRODUCT_VENDOR_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: STORE_PRODUCT_VENDOR
+index_name: STORE_PRODUCT_VENDOR_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: STORE_ID
+column_position: 1
+
+schema_name: ARS
+table_name: STORE_PRODUCT_VENDOR
+index_name: STORE_PRODUCT_VENDOR_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: VENDOR_ID
+column_position: 2
+
+schema_name: ARS
+table_name: STORE_PRODUCT_VENDOR
+index_name: STORE_PRODUCT_VENDOR_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: PRODUCT_ID
+column_position: 3
+
+schema_name: ARS
+table_name: STORE_PRODUCT_VENDOR_AUDIT
+index_name: STORE_PRODUCT_VENDOR_AUDIT_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: STORES
+index_name: ROWID$INDEX
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: ROWID
+column_position: 1
+
+schema_name: ARS
+table_name: STORES
+index_name: STORES_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: OBS_CERT_ID
+column_position: 1
+
+schema_name: ARS
+table_name: STORES
+index_name: STORES_IX2
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: CHAIN_ID
+column_position: 1
+
+schema_name: ARS
+table_name: STORES
+index_name: STORES_IX3
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: DIVISIONS_ID
+column_position: 1
+
+schema_name: ARS
+table_name: STORES
+index_name: STORES_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: STORES
+index_name: STORES_UQ_NCPDP
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: NCPDP
+column_position: 1
+
+schema_name: ARS
+table_name: STORES
+index_name: STORES_UQ_NHINID
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: NHINID
+column_position: 1
+
+schema_name: ARS
+table_name: STORES
+index_name: STORES_UQ_NPI
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: NPI
+column_position: 1
+
+schema_name: ARS
+table_name: USER_AUDIT_LOG
+index_name: USER_AUDIT_LOG_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR
+index_name: VENDOR_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR
+index_name: VENDOR_UQ_SHORTNAME
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: VENDOR_SHORT_NAME
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR
+index_name: VENDOR_UQ_VENDOR_NCPDP
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: VENDOR_NCPDP
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR
+index_name: VENDOR_UQ_VENDOR_NHIN
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: VENDOR_NHIN
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR
+index_name: VENDOR_UQ_VENDOR_NPI
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: VENDOR_NPI
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_CERT
+index_name: VENDOR_CERT_IDX_VENDORID
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: VENDOR_ID
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_CERT
+index_name: VENDOR_CERT_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_CERT
+index_name: VENDOR_CERT_UQ_VNDR_CERT_THUMB
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: VENDOR_CERT_THUMBPRINT
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_CERT_REQUEST
+index_name: VNDR_CERT_REQUEST_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_CERT_REQUEST
+index_name: VNDR_CERT_REQUEST_UQ_ACCESSKEY
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: ACCESS_KEY
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_CERT_REQUEST
+index_name: VNDR_CRT_REQUEST_IDX_REQUESTDT
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: REQUEST_DATE
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_CERT_REQUEST
+index_name: VNDR_CRT_REQUEST_IDX_VENDORID
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: VENDOR_ID
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_CERT_REQUEST
+index_name: VNDR_CRT_REQUEST_IDX_VNDRCRTID
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: VENDOR_CERT_ID
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_PRODUCT
+index_name: VENDOR_PRODUCT_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: VENDOR_ID
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_PRODUCT
+index_name: VENDOR_PRODUCT_IX2
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: PRODUCT_ID
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_PRODUCT
+index_name: VENDOR_PRODUCT_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_PRODUCT
+index_name: VENDOR_PRODUCT_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: VENDOR_ID
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_PRODUCT
+index_name: VENDOR_PRODUCT_UK1
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: PRODUCT_ID
+column_position: 2
+
+schema_name: ARS
+table_name: VENDOR_PRODUCT_INFO
+index_name: VENDOR_PRODUCT_INFO_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: VENDOR_ID
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_PRODUCT_INFO
+index_name: VENDOR_PRODUCT_INFO_IX1
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: PRODUCT_ID
+column_position: 2
+
+schema_name: ARS
+table_name: VENDOR_PRODUCT_INFO
+index_name: VENDOR_PRODUCT_INFO_IX2
+index_type: NONCLUSTERED
+uniqueness: NONUNIQUE
+column_name: CHAIN_ID
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_PRODUCT_INFO
+index_name: VENDOR_PRODUCT_INFO_PK
+index_type: CLUSTERED
+uniqueness: UNIQUE
+column_name: ID
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_PRODUCT_INFO
+index_name: VENDOR_PRODUCT_INFO_UK
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: VENDOR_ID
+column_position: 1
+
+schema_name: ARS
+table_name: VENDOR_PRODUCT_INFO
+index_name: VENDOR_PRODUCT_INFO_UK
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: PRODUCT_ID
+column_position: 2
+
+schema_name: ARS
+table_name: VENDOR_PRODUCT_INFO
+index_name: VENDOR_PRODUCT_INFO_UK
+index_type: NONCLUSTERED
+uniqueness: UNIQUE
+column_name: CHAIN_ID
+column_position: 3
+
