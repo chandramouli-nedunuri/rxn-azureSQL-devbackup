@@ -5,8 +5,14 @@ Deploy all 21 procedure/function packages to Azure SQL Database
 #>
 
 param(
-    [string]$PackagePath = "c:\Users\cnedunuri\Documents\DBRepo\EPR\EPS\packages"
+    [string]$PackagePath
 )
+
+# Use default path from repo structure if not provided
+if (-not $PackagePath) {
+    $repoRoot = Split-Path -Parent $PSScriptRoot
+    $PackagePath = Join-Path $repoRoot 'CS\Retail\eps\EPS\packages'
+}
 
 # Get all package files
 $packageFiles = @(Get-ChildItem -Path $PackagePath -Filter "*.sql" | Sort-Object Name)
@@ -38,7 +44,8 @@ for ($i = 0; $i -lt $packageFiles.Count; $i++) {
         
         $batchError = $false
         foreach ($batch in $batches) {
-            $output = & "c:\Users\cnedunuri\Documents\DBRepo\scripts\Connect-ToDatabase.ps1" -Query $batch 2>&1 | Out-String
+            $connectScript = Join-Path $PSScriptRoot 'Connect-ToDatabase.ps1'
+            $output = & $connectScript -Query $batch 2>&1 | Out-String
             
             if ($output -like "*ERROR*" -or $output -like "*Exception*" -or $output -like "*error*") {
                 $batchError = $true
@@ -77,7 +84,8 @@ Write-Host ""
 # Verify
 Write-Host "VERIFICATION:"
 Write-Host "════════════════════════════════════════════════════════"
-& "c:\Users\cnedunuri\Documents\DBRepo\scripts\Connect-ToDatabase.ps1" -Query @"
+$connectScript = Join-Path $PSScriptRoot 'Connect-ToDatabase.ps1'
+& $connectScript -Query @"
 SELECT COUNT(*) as ProcedureCount FROM sys.procedures WHERE schema_id > 4;
 "@
 

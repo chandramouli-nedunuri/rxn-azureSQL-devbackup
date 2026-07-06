@@ -15,9 +15,15 @@ Number of triggers to execute in parallel (default: 1 for sequential)
 #>
 
 param(
-    [string]$TriggerPath = "c:\Users\cnedunuri\Documents\DBRepo\EPR\EPS\Triggers",
+    [string]$TriggerPath = ""  # Will be set dynamically from repo structure
     [int]$BatchSize = 1
 )
+
+# Set default TriggerPath from repo structure if not provided
+if (-not $TriggerPath -or $TriggerPath -eq "") {
+    $repoRoot = Split-Path -Parent $PSScriptRoot
+    $TriggerPath = Join-Path $repoRoot 'CS\Retail\eps\EPS\Triggers'
+}
 
 # Get all trigger files
 $triggerFiles = @(Get-ChildItem -Path $TriggerPath -Filter "*.sql" | Where-Object { $_.Name -notlike "*BATCH*" } | Sort-Object Name)
@@ -51,7 +57,8 @@ for ($i = 0; $i -lt $triggerFiles.Count; $i++) {
         $batchError = $false
         foreach ($batch in $batches) {
             # Execute via Connect-ToDatabase.ps1
-            $output = & "c:\Users\cnedunuri\Documents\DBRepo\scripts\Connect-ToDatabase.ps1" -Query $batch 2>&1 | Out-String
+            $connectScript = Join-Path $PSScriptRoot 'Connect-ToDatabase.ps1'
+            $output = & $connectScript -Query $batch 2>&1 | Out-String
             
             if ($output -like "*ERROR*" -or $output -like "*Exception*" -or $output -like "*error*") {
                 $batchError = $true
@@ -109,7 +116,8 @@ if ($errorCount -gt 0) {
 # Verify in Azure SQL
 Write-Host "VERIFICATION:"
 Write-Host "════════════════════════════════════════════════════════"
-& "c:\Users\cnedunuri\Documents\DBRepo\scripts\Connect-ToDatabase.ps1" -Query @"
+$connectScript = Join-Path $PSScriptRoot 'Connect-ToDatabase.ps1'
+& $connectScript -Query @"
 SELECT COUNT(*) as TriggerCount FROM sys.triggers;
 "@
 

@@ -24,11 +24,12 @@ param(
 )
 
 # Configuration
+$repoRoot = Split-Path -Parent $PSScriptRoot
 $config = @{
     ServerName = 'sql-epr-qa-eastus2'
     DatabaseName = 'sqldb-epr-qa'
-    TriggerPath = 'C:\Users\cnedunuri\Documents\DBRepo\EPR\EPS\Triggers'
-    PackagePath = 'C:\Users\cnedunuri\Documents\DBRepo\EPR\EPS\packages'
+    TriggerPath = Join-Path $repoRoot 'CS\Retail\eps\EPS\Triggers'
+    PackagePath = Join-Path $repoRoot 'CS\Retail\eps\EPS\packages'
 }
 
 # ============================================================================
