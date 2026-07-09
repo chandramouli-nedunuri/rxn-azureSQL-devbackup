@@ -1,0 +1,5 @@
+-- BATCH 8 INDEXES
+-- ----------------------------------------------------------------------------
+
+CREATE INDEX [RX_HOURS_OF_ADMIN_DOSES_IX1] ON [SBMO].[RX_HOURS_OF_ADMIN_DOSES] ([TENANT_ID]);
+CREATE INDEX [RX_WARNING_LABEL_CODES_IX1] ON [SBMO].[RX_WARNING_LABEL_CODES] ([TENANT_ID], [RX_WARNING_LABEL_ID]);

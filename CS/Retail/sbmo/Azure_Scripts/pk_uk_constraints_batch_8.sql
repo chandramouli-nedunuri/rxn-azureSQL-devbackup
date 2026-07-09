@@ -1,5 +1,3 @@
--- BATCH 8 PRIMARY KEY & UNIQUE CONSTRAINTS
--- --------------------------------------------------------
+-- BATCH 8 PRIMARY KEY AND UNIQUE CONSTRAINTS
+-- ------------------------------------------------------------------
 
-ALTER TABLE [SBMO].[RX_WARNING_LABEL_CODES]
-ADD CONSTRAINT [RX_WARNING_LABEL_CODES_PK] PRIMARY KEY ([TENANT_ID], [ID]);
