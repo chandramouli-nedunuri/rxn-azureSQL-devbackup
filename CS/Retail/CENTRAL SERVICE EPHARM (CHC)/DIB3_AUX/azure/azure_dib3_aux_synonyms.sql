@@ -1,0 +1,1564 @@
+
+USE noneprdb
+GO
+ IF NOT EXISTS(SELECT * FROM sys.schemas WHERE [name] = N'DIB3_AUX')      
+     EXEC (N'CREATE SCHEMA DIB3_AUX')                                   
+ GO                                                               
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'IMGIPT_BASIC'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.IMGIPT_BASIC
+GO
+CREATE SYNONYM DIB3_AUX.IMGIPT_BASIC FOR noneprdb.DIB3_2.IMGIPT_BASIC
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.IMGIPT_BASIC',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'IMGIPT_BASIC'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'IMGIPT_CATEGORY'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.IMGIPT_CATEGORY
+GO
+CREATE SYNONYM DIB3_AUX.IMGIPT_CATEGORY FOR noneprdb.DIB3_2.IMGIPT_CATEGORY
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.IMGIPT_CATEGORY',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'IMGIPT_CATEGORY'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'IMGIPT_DESC'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.IMGIPT_DESC
+GO
+CREATE SYNONYM DIB3_AUX.IMGIPT_DESC FOR noneprdb.DIB3_2.IMGIPT_DESC
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.IMGIPT_DESC',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'IMGIPT_DESC'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'IMGIPT_DOSE_FORM'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.IMGIPT_DOSE_FORM
+GO
+CREATE SYNONYM DIB3_AUX.IMGIPT_DOSE_FORM FOR noneprdb.DIB3_2.IMGIPT_DOSE_FORM
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.IMGIPT_DOSE_FORM',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'IMGIPT_DOSE_FORM'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'IMGIPT_IMAGE'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.IMGIPT_IMAGE
+GO
+CREATE SYNONYM DIB3_AUX.IMGIPT_IMAGE FOR noneprdb.DIB3_2.IMGIPT_IMAGE
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.IMGIPT_IMAGE',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'IMGIPT_IMAGE'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'IMGIPT_IMPRINT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.IMGIPT_IMPRINT
+GO
+CREATE SYNONYM DIB3_AUX.IMGIPT_IMPRINT FOR noneprdb.DIB3_2.IMGIPT_IMPRINT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.IMGIPT_IMPRINT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'IMGIPT_IMPRINT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'IMGIPT_JOURNAL'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.IMGIPT_JOURNAL
+GO
+CREATE SYNONYM DIB3_AUX.IMGIPT_JOURNAL FOR noneprdb.DIB3_2.IMGIPT_JOURNAL
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.IMGIPT_JOURNAL',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'IMGIPT_JOURNAL'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'IMGIPT_LIB_VERSION'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.IMGIPT_LIB_VERSION
+GO
+CREATE SYNONYM DIB3_AUX.IMGIPT_LIB_VERSION FOR noneprdb.DIB3_2.IMGIPT_LIB_VERSION
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.IMGIPT_LIB_VERSION',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'IMGIPT_LIB_VERSION'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'IMGIPT_MANUFACT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.IMGIPT_MANUFACT
+GO
+CREATE SYNONYM DIB3_AUX.IMGIPT_MANUFACT FOR noneprdb.DIB3_2.IMGIPT_MANUFACT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.IMGIPT_MANUFACT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'IMGIPT_MANUFACT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'IMGIPT_PROP_DESC'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.IMGIPT_PROP_DESC
+GO
+CREATE SYNONYM DIB3_AUX.IMGIPT_PROP_DESC FOR noneprdb.DIB3_2.IMGIPT_PROP_DESC
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.IMGIPT_PROP_DESC',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'IMGIPT_PROP_DESC'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'IMGIPT_PROP_TEXT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.IMGIPT_PROP_TEXT
+GO
+CREATE SYNONYM DIB3_AUX.IMGIPT_PROP_TEXT FOR noneprdb.DIB3_2.IMGIPT_PROP_TEXT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.IMGIPT_PROP_TEXT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'IMGIPT_PROP_TEXT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'IMGIPT_PROPERTY'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.IMGIPT_PROPERTY
+GO
+CREATE SYNONYM DIB3_AUX.IMGIPT_PROPERTY FOR noneprdb.DIB3_2.IMGIPT_PROPERTY
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.IMGIPT_PROPERTY',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'IMGIPT_PROPERTY'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'IMGIPT_TEXT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.IMGIPT_TEXT
+GO
+CREATE SYNONYM DIB3_AUX.IMGIPT_TEXT FOR noneprdb.DIB3_2.IMGIPT_TEXT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.IMGIPT_TEXT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'IMGIPT_TEXT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'IMGIPT_UNIQUE'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.IMGIPT_UNIQUE
+GO
+CREATE SYNONYM DIB3_AUX.IMGIPT_UNIQUE FOR noneprdb.DIB3_2.IMGIPT_UNIQUE
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.IMGIPT_UNIQUE',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'IMGIPT_UNIQUE'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_ADE_COM'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_ADE_COM
+GO
+CREATE SYNONYM DIB3_AUX.MMW_ADE_COM FOR noneprdb.DIB3_2.MMW_ADE_COM
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_ADE_COM',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_ADE_COM'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_ADE_DRUGLINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_ADE_DRUGLINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_ADE_DRUGLINK FOR noneprdb.DIB3_2.MMW_ADE_DRUGLINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_ADE_DRUGLINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_ADE_DRUGLINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_ADE_SPECCOND'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_ADE_SPECCOND
+GO
+CREATE SYNONYM DIB3_AUX.MMW_ADE_SPECCOND FOR noneprdb.DIB3_2.MMW_ADE_SPECCOND
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_ADE_SPECCOND',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_ADE_SPECCOND'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_CLS_AHFS'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_CLS_AHFS
+GO
+CREATE SYNONYM DIB3_AUX.MMW_CLS_AHFS FOR noneprdb.DIB3_2.MMW_CLS_AHFS
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_CLS_AHFS',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_CLS_AHFS'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_CLS_AHFSDRUG'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_CLS_AHFSDRUG
+GO
+CREATE SYNONYM DIB3_AUX.MMW_CLS_AHFSDRUG FOR noneprdb.DIB3_2.MMW_CLS_AHFSDRUG
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_CLS_AHFSDRUG',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_CLS_AHFSDRUG'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_CLS_GPI'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_CLS_GPI
+GO
+CREATE SYNONYM DIB3_AUX.MMW_CLS_GPI FOR noneprdb.DIB3_2.MMW_CLS_GPI
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_CLS_GPI',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_CLS_GPI'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_CLS_GPIDRUG'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_CLS_GPIDRUG
+GO
+CREATE SYNONYM DIB3_AUX.MMW_CLS_GPIDRUG FOR noneprdb.DIB3_2.MMW_CLS_GPIDRUG
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_CLS_GPIDRUG',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_CLS_GPIDRUG'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_CM_DISPLINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_CM_DISPLINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_CM_DISPLINK FOR noneprdb.DIB3_2.MMW_CM_DISPLINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_CM_DISPLINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_CM_DISPLINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_CM_PACKLINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_CM_PACKLINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_CM_PACKLINK FOR noneprdb.DIB3_2.MMW_CM_PACKLINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_CM_PACKLINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_CM_PACKLINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_CM_TEXT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_CM_TEXT
+GO
+CREATE SYNONYM DIB3_AUX.MMW_CM_TEXT FOR noneprdb.DIB3_2.MMW_CM_TEXT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_CM_TEXT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_CM_TEXT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DCK_COM'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DCK_COM
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DCK_COM FOR noneprdb.DIB3_2.MMW_DCK_COM
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DCK_COM',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DCK_COM'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DCK_DRUGLINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DCK_DRUGLINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DCK_DRUGLINK FOR noneprdb.DIB3_2.MMW_DCK_DRUGLINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DCK_DRUGLINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DCK_DRUGLINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DFA_INT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DFA_INT
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DFA_INT FOR noneprdb.DIB3_2.MMW_DFA_INT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DFA_INT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DFA_INT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DFA_TEXT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DFA_TEXT
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DFA_TEXT FOR noneprdb.DIB3_2.MMW_DFA_TEXT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DFA_TEXT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DFA_TEXT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DI_CLASSLINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DI_CLASSLINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DI_CLASSLINK FOR noneprdb.DIB3_2.MMW_DI_CLASSLINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DI_CLASSLINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DI_CLASSLINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DI_INT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DI_INT
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DI_INT FOR noneprdb.DIB3_2.MMW_DI_INT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DI_INT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DI_INT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DI_RPIDLINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DI_RPIDLINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DI_RPIDLINK FOR noneprdb.DIB3_2.MMW_DI_RPIDLINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DI_RPIDLINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DI_RPIDLINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DI_TEXT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DI_TEXT
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DI_TEXT FOR noneprdb.DIB3_2.MMW_DI_TEXT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DI_TEXT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DI_TEXT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DRUG_DISP'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DRUG_DISP
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DRUG_DISP FOR noneprdb.DIB3_2.MMW_DRUG_DISP
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DRUG_DISP',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DRUG_DISP'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DRUG_DISP_LBLR'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DRUG_DISP_LBLR
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DRUG_DISP_LBLR FOR noneprdb.DIB3_2.MMW_DRUG_DISP_LBLR
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DRUG_DISP_LBLR',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DRUG_DISP_LBLR'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DRUG_DOSEFORM'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DRUG_DOSEFORM
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DRUG_DOSEFORM FOR noneprdb.DIB3_2.MMW_DRUG_DOSEFORM
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DRUG_DOSEFORM',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DRUG_DOSEFORM'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DRUG_GPI'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DRUG_GPI
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DRUG_GPI FOR noneprdb.DIB3_2.MMW_DRUG_GPI
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DRUG_GPI',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DRUG_GPI'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DRUG_GPILINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DRUG_GPILINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DRUG_GPILINK FOR noneprdb.DIB3_2.MMW_DRUG_GPILINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DRUG_GPILINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DRUG_GPILINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DRUG_KDC'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DRUG_KDC
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DRUG_KDC FOR noneprdb.DIB3_2.MMW_DRUG_KDC
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DRUG_KDC',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DRUG_KDC'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DRUG_KDCLINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DRUG_KDCLINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DRUG_KDCLINK FOR noneprdb.DIB3_2.MMW_DRUG_KDCLINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DRUG_KDCLINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DRUG_KDCLINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DRUG_LABELER'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DRUG_LABELER
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DRUG_LABELER FOR noneprdb.DIB3_2.MMW_DRUG_LABELER
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DRUG_LABELER',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DRUG_LABELER'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DRUG_NAME'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DRUG_NAME
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DRUG_NAME FOR noneprdb.DIB3_2.MMW_DRUG_NAME
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DRUG_NAME',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DRUG_NAME'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DRUG_PACK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DRUG_PACK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DRUG_PACK FOR noneprdb.DIB3_2.MMW_DRUG_PACK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DRUG_PACK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DRUG_PACK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DRUG_PACK_MOD'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DRUG_PACK_MOD
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DRUG_PACK_MOD FOR noneprdb.DIB3_2.MMW_DRUG_PACK_MOD
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DRUG_PACK_MOD',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DRUG_PACK_MOD'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DRUG_ROUTE'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DRUG_ROUTE
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DRUG_ROUTE FOR noneprdb.DIB3_2.MMW_DRUG_ROUTE
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DRUG_ROUTE',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DRUG_ROUTE'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DRUG_ROUTED'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DRUG_ROUTED
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DRUG_ROUTED FOR noneprdb.DIB3_2.MMW_DRUG_ROUTED
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DRUG_ROUTED',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DRUG_ROUTED'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DUP_DRUGLINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DUP_DRUGLINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DUP_DRUGLINK FOR noneprdb.DIB3_2.MMW_DUP_DRUGLINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DUP_DRUGLINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DUP_DRUGLINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_DUP_TEXT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_DUP_TEXT
+GO
+CREATE SYNONYM DIB3_AUX.MMW_DUP_TEXT FOR noneprdb.DIB3_2.MMW_DUP_TEXT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_DUP_TEXT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_DUP_TEXT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_IND_COM'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_IND_COM
+GO
+CREATE SYNONYM DIB3_AUX.MMW_IND_COM FOR noneprdb.DIB3_2.MMW_IND_COM
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_IND_COM',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_IND_COM'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_IND_COTREAT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_IND_COTREAT
+GO
+CREATE SYNONYM DIB3_AUX.MMW_IND_COTREAT FOR noneprdb.DIB3_2.MMW_IND_COTREAT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_IND_COTREAT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_IND_COTREAT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_IND_DRUGLINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_IND_DRUGLINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_IND_DRUGLINK FOR noneprdb.DIB3_2.MMW_IND_DRUGLINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_IND_DRUGLINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_IND_DRUGLINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_IND_RPID'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_IND_RPID
+GO
+CREATE SYNONYM DIB3_AUX.MMW_IND_RPID FOR noneprdb.DIB3_2.MMW_IND_RPID
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_IND_RPID',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_IND_RPID'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_IND_SOURCE'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_IND_SOURCE
+GO
+CREATE SYNONYM DIB3_AUX.MMW_IND_SOURCE FOR noneprdb.DIB3_2.MMW_IND_SOURCE
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_IND_SOURCE',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_IND_SOURCE'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_LIB_CODEDEF'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_LIB_CODEDEF
+GO
+CREATE SYNONYM DIB3_AUX.MMW_LIB_CODEDEF FOR noneprdb.DIB3_2.MMW_LIB_CODEDEF
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_LIB_CODEDEF',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_LIB_CODEDEF'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_LIB_DISCLAIMER'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_LIB_DISCLAIMER
+GO
+CREATE SYNONYM DIB3_AUX.MMW_LIB_DISCLAIMER FOR noneprdb.DIB3_2.MMW_LIB_DISCLAIMER
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_LIB_DISCLAIMER',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_LIB_DISCLAIMER'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_LIB_VERSION'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_LIB_VERSION
+GO
+CREATE SYNONYM DIB3_AUX.MMW_LIB_VERSION FOR noneprdb.DIB3_2.MMW_LIB_VERSION
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_LIB_VERSION',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_LIB_VERSION'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_MED'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_MED
+GO
+CREATE SYNONYM DIB3_AUX.MMW_MED FOR noneprdb.DIB3_2.MMW_MED
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_MED',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_MED'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_MED_CIT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_MED_CIT
+GO
+CREATE SYNONYM DIB3_AUX.MMW_MED_CIT FOR noneprdb.DIB3_2.MMW_MED_CIT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_MED_CIT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_MED_CIT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_MED_EXTVOCAB'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_MED_EXTVOCAB
+GO
+CREATE SYNONYM DIB3_AUX.MMW_MED_EXTVOCAB FOR noneprdb.DIB3_2.MMW_MED_EXTVOCAB
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_MED_EXTVOCAB',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_MED_EXTVOCAB'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_MED_HIER'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_MED_HIER
+GO
+CREATE SYNONYM DIB3_AUX.MMW_MED_HIER FOR noneprdb.DIB3_2.MMW_MED_HIER
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_MED_HIER',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_MED_HIER'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_MED_INTVOCAB'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_MED_INTVOCAB
+GO
+CREATE SYNONYM DIB3_AUX.MMW_MED_INTVOCAB FOR noneprdb.DIB3_2.MMW_MED_INTVOCAB
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_MED_INTVOCAB',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_MED_INTVOCAB'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_MED_LINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_MED_LINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_MED_LINK FOR noneprdb.DIB3_2.MMW_MED_LINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_MED_LINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_MED_LINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_MED_NAME'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_MED_NAME
+GO
+CREATE SYNONYM DIB3_AUX.MMW_MED_NAME FOR noneprdb.DIB3_2.MMW_MED_NAME
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_MED_NAME',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_MED_NAME'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_MED_TEXT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_MED_TEXT
+GO
+CREATE SYNONYM DIB3_AUX.MMW_MED_TEXT FOR noneprdb.DIB3_2.MMW_MED_TEXT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_MED_TEXT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_MED_TEXT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_MED_TEXT_CIT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_MED_TEXT_CIT
+GO
+CREATE SYNONYM DIB3_AUX.MMW_MED_TEXT_CIT FOR noneprdb.DIB3_2.MMW_MED_TEXT_CIT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_MED_TEXT_CIT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_MED_TEXT_CIT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_MONO_CLSNAME'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_MONO_CLSNAME
+GO
+CREATE SYNONYM DIB3_AUX.MMW_MONO_CLSNAME FOR noneprdb.DIB3_2.MMW_MONO_CLSNAME
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_MONO_CLSNAME',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_MONO_CLSNAME'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_MONO_TEXT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_MONO_TEXT
+GO
+CREATE SYNONYM DIB3_AUX.MMW_MONO_TEXT FOR noneprdb.DIB3_2.MMW_MONO_TEXT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_MONO_TEXT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_MONO_TEXT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_PAR_CLASS'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_PAR_CLASS
+GO
+CREATE SYNONYM DIB3_AUX.MMW_PAR_CLASS FOR noneprdb.DIB3_2.MMW_PAR_CLASS
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_PAR_CLASS',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_PAR_CLASS'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_PAR_CLASSLINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_PAR_CLASSLINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_PAR_CLASSLINK FOR noneprdb.DIB3_2.MMW_PAR_CLASSLINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_PAR_CLASSLINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_PAR_CLASSLINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_PAR_DRUGLINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_PAR_DRUGLINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_PAR_DRUGLINK FOR noneprdb.DIB3_2.MMW_PAR_DRUGLINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_PAR_DRUGLINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_PAR_DRUGLINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_PAR_INGRLINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_PAR_INGRLINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_PAR_INGRLINK FOR noneprdb.DIB3_2.MMW_PAR_INGRLINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_PAR_INGRLINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_PAR_INGRLINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_PAR_INT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_PAR_INT
+GO
+CREATE SYNONYM DIB3_AUX.MMW_PAR_INT FOR noneprdb.DIB3_2.MMW_PAR_INT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_PAR_INT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_PAR_INT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_PDE_DRUGLINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_PDE_DRUGLINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_PDE_DRUGLINK FOR noneprdb.DIB3_2.MMW_PDE_DRUGLINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_PDE_DRUGLINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_PDE_DRUGLINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_PRCA_COM'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_PRCA_COM
+GO
+CREATE SYNONYM DIB3_AUX.MMW_PRCA_COM FOR noneprdb.DIB3_2.MMW_PRCA_COM
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_PRCA_COM',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_PRCA_COM'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_PRCA_DRUGLINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_PRCA_DRUGLINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_PRCA_DRUGLINK FOR noneprdb.DIB3_2.MMW_PRCA_DRUGLINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_PRCA_DRUGLINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_PRCA_DRUGLINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_PRCA_SPECCOND'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_PRCA_SPECCOND
+GO
+CREATE SYNONYM DIB3_AUX.MMW_PRCA_SPECCOND FOR noneprdb.DIB3_2.MMW_PRCA_SPECCOND
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_PRCA_SPECCOND',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_PRCA_SPECCOND'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_PRCC_COM'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_PRCC_COM
+GO
+CREATE SYNONYM DIB3_AUX.MMW_PRCC_COM FOR noneprdb.DIB3_2.MMW_PRCC_COM
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_PRCC_COM',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_PRCC_COM'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_PRCC_DRUGLINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_PRCC_DRUGLINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_PRCC_DRUGLINK FOR noneprdb.DIB3_2.MMW_PRCC_DRUGLINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_PRCC_DRUGLINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_PRCC_DRUGLINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_PRCC_SPECCOND'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_PRCC_SPECCOND
+GO
+CREATE SYNONYM DIB3_AUX.MMW_PRCC_SPECCOND FOR noneprdb.DIB3_2.MMW_PRCC_SPECCOND
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_PRCC_SPECCOND',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_PRCC_SPECCOND'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_SNOMED_MC_LINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_SNOMED_MC_LINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_SNOMED_MC_LINK FOR noneprdb.DIB3_2.MMW_SNOMED_MC_LINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_SNOMED_MC_LINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_SNOMED_MC_LINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_WL_DRUGLINK'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_WL_DRUGLINK
+GO
+CREATE SYNONYM DIB3_AUX.MMW_WL_DRUGLINK FOR noneprdb.DIB3_2.MMW_WL_DRUGLINK
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_WL_DRUGLINK',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_WL_DRUGLINK'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_WL_TEXT'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_WL_TEXT
+GO
+CREATE SYNONYM DIB3_AUX.MMW_WL_TEXT FOR noneprdb.DIB3_2.MMW_WL_TEXT
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_WL_TEXT',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_WL_TEXT'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF  EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'MMW_WL_VENDCODE'  AND sc.name=N'DIB3_AUX'  AND type in (N'SN'))
+ DROP SYNONYM DIB3_AUX.MMW_WL_VENDCODE
+GO
+CREATE SYNONYM DIB3_AUX.MMW_WL_VENDCODE FOR noneprdb.DIB3_2.MMW_WL_VENDCODE
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'DIB3_AUX.MMW_WL_VENDCODE',
+        N'SCHEMA', N'DIB3_AUX',
+        N'SYNONYM', N'MMW_WL_VENDCODE'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO

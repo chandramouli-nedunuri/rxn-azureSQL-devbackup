@@ -1,0 +1,1 @@
+# No database objects in the schema to convert

@@ -1,0 +1,64 @@
+
+USE noneprdb
+GO
+ IF NOT EXISTS(SELECT * FROM sys.schemas WHERE [name] = N'PBC')      
+     EXEC (N'CREATE SCHEMA PBC')                                   
+ GO                                                               
+
+USE noneprdb
+GO
+IF EXISTS (SELECT * FROM sys.sequences seq JOIN sys.schemas sch ON seq.schema_id=sch.schema_id WHERE seq.name=N'MEMBER_ACCT_SEQ'  AND sch.name=N'PBC' )
+ DROP SEQUENCE [PBC].[MEMBER_ACCT_SEQ]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE SEQUENCE [PBC].[MEMBER_ACCT_SEQ]
+    AS numeric(28)
+    START WITH 54003
+    INCREMENT BY 1
+    MINVALUE 1
+    MAXVALUE 999999999999999999999999999
+    NO CYCLE
+    CACHE 100
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'PBC.MEMBER_ACCT_SEQ',
+        N'SCHEMA', N'PBC',
+        N'SEQUENCE', N'MEMBER_ACCT_SEQ'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE noneprdb
+GO
+IF EXISTS (SELECT * FROM sys.sequences seq JOIN sys.schemas sch ON seq.schema_id=sch.schema_id WHERE seq.name=N'MEMBER_INFO_SEQ'  AND sch.name=N'PBC' )
+ DROP SEQUENCE [PBC].[MEMBER_INFO_SEQ]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE SEQUENCE [PBC].[MEMBER_INFO_SEQ]
+    AS numeric(28)
+    START WITH 382519
+    INCREMENT BY 1
+    MINVALUE 1
+    MAXVALUE 999999999999999999999999999
+    NO CYCLE
+    CACHE 100
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'PBC.MEMBER_INFO_SEQ',
+        N'SCHEMA', N'PBC',
+        N'SEQUENCE', N'MEMBER_INFO_SEQ'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
